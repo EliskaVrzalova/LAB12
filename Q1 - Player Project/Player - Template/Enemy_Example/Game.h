@@ -14,6 +14,7 @@ class Game
 {
 	// data members
 	Player myPlayer;  // creates an object of type Player using the default constructor
+	Player myPlayer2;
 	sf::RenderWindow window;  // main game window
 
 public:

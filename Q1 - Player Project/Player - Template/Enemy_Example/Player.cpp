@@ -13,8 +13,8 @@ Player::Player() // default constructor
 	image_width = 124; // the width of the image in pixels
 	scaled = false; // the image is not scaled
 
-	int xPos = SCREEN_WIDTH/2;        // place the player object in the centre of the screen
-	int yPos = SCREEN_HEIGHT/2;
+	int xPos = SCREEN_HEIGHT / 2;     // place the player object in the centre of the screen
+	int yPos = (rand() % 2 )+ 1;
 	setPosition(xPos, yPos);  // set the position of the players sprite
 
 	speed = 5; // the average speed
@@ -91,6 +91,47 @@ void Player::decreaseSpeed()
 		speed--;
 	}
 }
+
+void Player::increaseSize()
+{
+	if (scaled == false)
+	{
+		sprite.setScale(2, 2);
+		image_width = image_width * 2;
+		scaled = true; // use boolean so the size can be increased only once
+	}
+}
+
+void Player::changeColor()
+{
+	int num = (rand() % 3) + 1;
+
+	if (num == 1)
+	{
+		sprite.setColor(sf::Color::Yellow);
+	}
+	else if (num == 2)
+	{
+		sprite.setColor(sf::Color::Blue);
+	}
+	else
+	{
+		sprite.setColor(sf::Color::Green);
+	}
+}
+
+void Player::changeDirection()
+{
+	if (direction == WEST)
+	{
+		direction = EAST;
+	}
+	else if (direction == EAST)
+	{
+		direction = WEST;
+	}
+}
+
 
 
 

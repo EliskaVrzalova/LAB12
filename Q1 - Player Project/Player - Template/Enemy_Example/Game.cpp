@@ -121,30 +121,36 @@ void Game::update()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
 	{
 		myPlayer.increaseSpeed();
+		myPlayer2.increaseSpeed();
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		myPlayer.decreaseSpeed();
+		myPlayer2.decreaseSpeed();
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I))
 	{
-		// the size of the player's image increases. This occurs only once.
+		myPlayer.increaseSize();
+		myPlayer2.increaseSize();
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
 	{
-		 // changes the colour of the player's image when C is pressed
+		myPlayer.changeColor();
+		myPlayer2.changeColor();
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		// changes the direction the player is moving when D is pressed
+		myPlayer.changeDirection();
+		myPlayer2.changeDirection();
 	}
 
 	// calls the player object to move itself in the appropriate direction
 	myPlayer.move();
+	myPlayer2.move();
 	
 }
 
@@ -157,6 +163,7 @@ void Game::draw()
 	window.draw(m_message);  // write the message on the screen
 
 	window.draw(myPlayer.getBody());  // draw the player object
+	window.draw(myPlayer2.getBody());
 
 	window.display();
 }

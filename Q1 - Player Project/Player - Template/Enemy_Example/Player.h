@@ -33,5 +33,8 @@ public:	  // declaration of member functions
 	void move();
 	void increaseSpeed();
 	void decreaseSpeed();
+	void increaseSize();
+	void changeColor();
+	void changeDirection();
 
 };
