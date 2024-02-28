@@ -21,6 +21,8 @@ public:
 	sf::Font m_font;  // font for writing text
 	sf::Text m_message;  // text to write on the screen
 
+	bool canChangeDirection{ true };
+	bool canChangeColor{ true };
 
 public:	  // declaration of function members
 	Game();  //  default constructor function

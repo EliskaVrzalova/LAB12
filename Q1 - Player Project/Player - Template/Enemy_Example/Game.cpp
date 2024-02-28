@@ -1,7 +1,7 @@
-// Name: 
-// Login: 
-// Date: 
-// Approx hours of work :
+// Name: Eliska Vrzalova
+// Login: c00301768
+// Date: 28/02/2024
+// Approx hours of work : 1 
 //---------------------------------------------------------------------------
 //	TEMPLATE
 /*
@@ -136,16 +136,32 @@ void Game::update()
 		myPlayer2.increaseSize();
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) // key is pressed
 	{
-		myPlayer.changeColor();
-		myPlayer2.changeColor();
+		if (canChangeColor == true)
+		{
+			myPlayer.changeColor();
+			myPlayer2.changeColor();
+			canChangeColor = false;
+		}
+	}
+	else // key is released
+	{
+		canChangeColor = true;
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) // key is pressed
 	{
-		myPlayer.changeDirection();
-		myPlayer2.changeDirection();
+		if (canChangeDirection == true)
+		{
+			myPlayer.changeDirection();
+			myPlayer2.changeDirection();
+			canChangeDirection = false;
+		}
+	}
+	else // key is no longer pressed/ released
+	{
+			canChangeDirection = true;
 	}
 
 	// calls the player object to move itself in the appropriate direction
